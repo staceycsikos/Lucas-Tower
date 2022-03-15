@@ -10,14 +10,49 @@
     <body>
       <h1>Hanoi Tower</h1>
       <div class="container">
-
-        <div class="place-holder" id="left">
-          <div class="item one" draggable="true"></div>
-          <div class="item two" draggable="true"></div>
-          <div class="item three" draggable="true"></div>
+        <div 
+          class="place-holder" 
+          id="left" 
+          ondragover="onDragOver(event)" 
+          ondrop="onDrop(event)" 
+          ondragleave="onDragLeave(event)">
+          <div 
+          class="item three" 
+          id="3" 
+          draggable="true" 
+          ondragstart="onDragStart(event)">
+          3
         </div>
-        <div class="place-holder" id="mid"></div>
-        <div class="place-holder" id="right"></div>
+          
+        <div 
+          class="item two" 
+          id="2" 
+          draggable="true" 
+          ondragstart="onDragStart(event)" >
+          2
+        </div>
+        <div 
+          class="item one" 
+          id="1" 
+          draggable="true" 
+          ondragstart="onDragStart(event)">
+          1
+        </div> 
+        </div>
+        <div 
+          class="place-holder" 
+          id="mid" 
+          ondragover="onDragOver(event)" 
+          ondrop="onDrop(event)" 
+          ondragleave="onDragLeave(event)">
+        </div>
+        <div 
+          class="place-holder" 
+          id="right" 
+          ondragover="onDragOver(event)" 
+          ondrop="onDrop(event)" 
+          ondragleave="onDragLeave(event)">
+        </div>
 
       </div>
       

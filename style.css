@@ -5,7 +5,7 @@ h1{
 .container {
   display: flex;
   justify-content: space-evenly;
-  height: 75vh;
+  height: 50vh;
   align-items: flex-end;
 }
 .one {
@@ -13,6 +13,7 @@ height: 20px;
 width: 100px;
 background-color: aqua;
 border: .75px black solid;
+text-align: center;
 }
 
 .two{
@@ -20,6 +21,7 @@ border: .75px black solid;
   width: 75px;
   background-color: aqua;
   border: .75px black solid;
+  text-align: center;
 }
 
 .three{
@@ -27,18 +29,20 @@ border: .75px black solid;
   width: 50px;
   background-color: aqua;
   border: .75px black solid;
+  text-align: center;
 }
 
 .place-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   width: 125px;
-  height: 3px;
-  background-color: black;
-  padding: 20px
-}
-.hide {
-  display: none;
+  height: 50vh;
+  padding: 10px 5px;
+  border: 1px solid black;
 }
 
 .drag-over{
-  border: dashed 3px red;
+  border: dashed 2px red;
 }
