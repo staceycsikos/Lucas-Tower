@@ -1,0 +1,29 @@
+
+h1{
+  text-align: center;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+#one {
+height: 20px;
+width: 100px;
+background-color: aqua;
+border: .75px black solid;
+}
+
+#two{
+  height: 20px;
+  width: 75px;
+  background-color: aqua;
+  border: .75px black solid;
+}
+
+#three{
+  height: 20px;
+  width: 50px;
+  background-color: aqua;
+  border: .75px black solid;
+}
+
