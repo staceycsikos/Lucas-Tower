@@ -5,25 +5,40 @@ h1{
 .container {
   display: flex;
   justify-content: space-evenly;
+  height: 75vh;
+  align-items: flex-end;
 }
-#one {
+.one {
 height: 20px;
 width: 100px;
 background-color: aqua;
 border: .75px black solid;
 }
 
-#two{
+.two{
   height: 20px;
   width: 75px;
   background-color: aqua;
   border: .75px black solid;
 }
 
-#three{
+.three{
   height: 20px;
   width: 50px;
   background-color: aqua;
   border: .75px black solid;
 }
 
+.place-holder {
+  width: 125px;
+  height: 3px;
+  background-color: black;
+  padding: 20px
+}
+.hide {
+  display: none;
+}
+
+.drag-over{
+  border: dashed 3px red;
+}
