@@ -10,7 +10,7 @@ h1{
 }
 .one {
 height: 20px;
-width: 100px;
+width:  25px;
 background-color: aqua;
 border: .75px black solid;
 text-align: center;
@@ -18,7 +18,7 @@ text-align: center;
 
 .two{
   height: 20px;
-  width: 75px;
+  width: 50px;
   background-color: aqua;
   border: .75px black solid;
   text-align: center;
@@ -26,7 +26,22 @@ text-align: center;
 
 .three{
   height: 20px;
-  width: 50px;
+  width: 75px;
+  background-color: aqua;
+  border: .75px black solid;
+  text-align: center;
+}
+
+.four{
+  height: 20px;
+  width: 100px;
+  background-color: aqua;
+  border: .75px black solid;
+  text-align: center;
+}
+.five{
+  height: 20px;
+  width: 125px;
   background-color: aqua;
   border: .75px black solid;
   text-align: center;
