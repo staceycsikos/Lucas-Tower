@@ -2,11 +2,20 @@ let towerA = document.querySelector("#left");
 let towerB = document.querySelector("#mid");
 let towerC = document.querySelector("#right");
 let two = document.querySelector(".two");
+// let towers = towerA + towerB
+// console.log(towerA.children.length)
 
-
+/// have to change so only top element is moveable. 
+/// maybe something to do with last drop? but then how
+/// will it affect the first move?
+if (towerA.children.length > 0) {
+  towerA.children[0].setAttribute("draggable", "true")
+  towerA.children[2].setAttribute("draggable", "false")
+};
 
 function onDragStart(event) {
   event.dataTransfer.setData("text/plain", event.target.id);
+  console.log(towerA.children[0])
 }
 
 function onDragOver(event) {
@@ -28,16 +37,14 @@ function onDrop(event) {
   const draggableElement = document.getElementById(id);
   const dropzone = event.target;
   let firstChild = dropzone.firstChild;
- 
- 
   // lastdrop = dropzone.children[dropzone.children.length - 1]; // gets last item dropped
-  // console.log(parseInt(draggableElement.id)) // get the id in a number for comparsion
-
-// console.log(draggableElement)
-
-  
-  if (dropzone.id === "right" && dropzone.childElementCount === 4) {
-    setTimeout(reset, 5000)
+  if (towerA && towerC.childElementCount === 4) {
+    let winner = document.querySelector(".winner")
+    winner.style.display = "block";
+    window.onclick = function () {
+      winner.style.display = "none"
+      setTimeout(reset, 2000)   // why didn't function work inside of here. 
+    }
   }
 
   if (dropzone.className === "place-holder") {  
@@ -53,6 +60,21 @@ function onDrop(event) {
     } else {
         dropzone.insertBefore(draggableElement, firstChild); 
         event.dataTransfer.clearData();
+    }
+    // towerA.children[0].setAttribute("draggable", "true")
+
+    if (towerA.children.length >= 0) {
+      towerA.children[0].setAttribute("draggable", "true")
+      towerA.children[1].setAttribute("draggable", "false")
+    }
+
+    if (towerB.children.length >= 0) {
+      towerB.children[0].setAttribute("draggable", "true")
+      towerB.children[1].setAttribute("draggable", "false")
+    };
+    if (towerC.children.length >= 0) {
+      towerC.children[0].setAttribute("draggable", "true")
+      towerC.children[1].setAttribute("draggable", "false")
     }
   }
 
