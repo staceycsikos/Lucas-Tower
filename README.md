@@ -8,6 +8,9 @@ Hanoi Tower is a strategic game that has three towers and a certain amount of di
 Link to deployed game:
 https://staceycsikos.github.io/Lucas-Tower/
 
+<img width="1267" alt="Screen Shot 2022-03-18 at 2 53 49 PM" src="https://user-images.githubusercontent.com/98727741/159071236-e4494a5d-d618-4bb1-b653-346663670371.png">
+
+
 
 Development
 ========
