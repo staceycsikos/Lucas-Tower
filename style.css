@@ -1,6 +1,23 @@
+* {
+  transition: all 0.5s ease;
+}
 
-h1{
+body {
+  background-image: url("/sand.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+h1 {
   text-align: center;
+  text-decoration-line: underline;
+  text-decoration-color: black;
+  text-underline-position: under;
+  color: #0ff;
+  font-size: 40px;
+  text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
 }
 .container {
   display: flex;
@@ -9,41 +26,41 @@ h1{
   align-items: flex-end;
 }
 .one {
-height: 20px;
-width:  25px;
-background-color: aqua;
-border: .75px black solid;
-text-align: center;
+  height: 20px;
+  width: 25px;
+  background-color: aqua;
+  border: 0.75px black solid;
+  text-align: center;
 }
 
-.two{
+.two {
   height: 20px;
   width: 50px;
   background-color: aqua;
-  border: .75px black solid;
+  border: 0.75px black solid;
   text-align: center;
 }
 
-.three{
+.three {
   height: 20px;
   width: 75px;
   background-color: aqua;
-  border: .75px black solid;
+  border: 0.75px black solid;
   text-align: center;
 }
 
-.four{
+.four {
   height: 20px;
   width: 100px;
   background-color: aqua;
-  border: .75px black solid;
+  border: 0.75px black solid;
   text-align: center;
 }
-.five{
+.five {
   height: 20px;
   width: 125px;
   background-color: aqua;
-  border: .75px black solid;
+  border: 0.75px black solid;
   text-align: center;
 }
 
@@ -58,7 +75,7 @@ text-align: center;
   border-bottom: 5px solid black;
 }
 
-.drag-over{
+.drag-over {
   box-shadow: 1px 1px 100px 20px #0ff;
 }
 
@@ -67,14 +84,13 @@ text-align: center;
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.25);
 }
 
-span{
+span {
   cursor: pointer;
 }
 
-.winner-words{
+.winner-words {
   background-color: white;
   position: absolute;
   text-align: center;
@@ -83,10 +99,11 @@ span{
   width: 40%;
   padding: 20px;
   border-radius: 5px;
-  border: 1px solid #0ff
+  border: 1px solid #0ff;
 }
- 
- .rules{
-   display: none;
- }
-
+.rulesBtn {
+  background-color: #0ff;
+}
+.rules {
+  display: none;
+}

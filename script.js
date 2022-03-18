@@ -69,44 +69,33 @@ function onDrop(event) {
 
   if (dropzone.className === "place-holder") {
     if (firstChild) {
-      console.log("Part 1");
       let x = parseInt(draggableElement.id);
       let y = parseInt(firstChild.id);
       let z = parseInt(firstChild?.nextElementSibling?.id) || false;
-      console.log(firstChild);
+
       console.log(`x: ${x}`, `y: ${y}`, `z: ${z}`);
       if (x < y) {
-        console.log("Part 2");
         dropzone.insertBefore(draggableElement, firstChild);
         event.dataTransfer.clearData();
         checkWinner();
       } else if (z) {
-        console.log("Part 3");
         if (!y && x < z) {
-          console.log("Part 4");
-          dropzone.insertBefore(
-            draggableElement,
-            firstChild.nextElementSibling
+          dropzone.insertBefore(draggableElement, firstChild.nextElementSibling
           );
           event.dataTransfer.clearData();
         } else {
-          console.log("Part 5");
           event.dataTransfer.clearData();
         }
       } else {
         if (!y && !z) {
-          dropzone.insertBefore(
-            draggableElement,
-            firstChild.nextElementSibling
+          dropzone.insertBefore(draggableElement, firstChild.nextElementSibling
           );
           event.dataTransfer.clearData();
         } else {
-          console.log("Part 6");
           event.dataTransfer.clearData();
         }
       }
     } else {
-      console.log("Part 7");
       dropzone.insertBefore(draggableElement, firstChild);
       event.dataTransfer.clearData();
     }
