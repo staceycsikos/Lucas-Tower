@@ -2,16 +2,25 @@ let towerA = document.querySelector("#left");
 let towerB = document.querySelector("#mid");
 let towerC = document.querySelector("#right");
 let two = document.querySelector(".two");
-// let towers = towerA + towerB
-// console.log(towerA.children.length)
+let button = document.querySelector(".rulesBtn")
+let clickCount = 0
 
-/// have to change so only top element is moveable.
-/// maybe something to do with last drop? but then how
-/// will it affect the first move?
+function rulesAppear() {
+  rules = document.querySelectorAll(".rules")
+  if (clickCount % 2 == 0) {
+    rules.forEach(rule => rule.style.display = "block")
+    clickCount ++
+  } else {
+    rules.forEach(rule => rule.style.display = "none")
+    clickCount ++
+  }
+}
+
+button.addEventListener("click", rulesAppear)
+
+
+
 if (towerA.children.length > 0) {
-  // towerA.children[0].setAttribute("draggable", "true");
-  // towerA.children[2].setAttribute("draggable", "false");
-  // console.log(towerA.children);
   let children = towerA.children;
 
   for (let i = 0; i < children.length; i++) {
