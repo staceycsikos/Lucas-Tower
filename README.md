@@ -7,7 +7,7 @@ Hanoi Tower is a strategic game that has three towers and a certain amount of di
 
 Link to deployed game 
 
-*insert picture here *
+![alt text]/TowerPic.png
 
 
 Development
