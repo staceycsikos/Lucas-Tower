@@ -2,23 +2,21 @@ let towerA = document.querySelector("#left");
 let towerB = document.querySelector("#mid");
 let towerC = document.querySelector("#right");
 let two = document.querySelector(".two");
-let button = document.querySelector(".rulesBtn")
-let clickCount = 0
+let button = document.querySelector(".rulesBtn");
+let clickCount = 0;
 
 function rulesAppear() {
-  rules = document.querySelectorAll(".rules")
+  rules = document.querySelectorAll(".rules");
   if (clickCount % 2 == 0) {
-    rules.forEach(rule => rule.style.display = "block")
-    clickCount ++
+    rules.forEach((rule) => (rule.style.display = "block"));
+    clickCount++;
   } else {
-    rules.forEach(rule => rule.style.display = "none")
-    clickCount ++
+    rules.forEach((rule) => (rule.style.display = "none"));
+    clickCount++;
   }
 }
 
-button.addEventListener("click", rulesAppear)
-
-
+button.addEventListener("click", rulesAppear);
 
 if (towerA.children.length > 0) {
   let children = towerA.children;
@@ -80,7 +78,9 @@ function onDrop(event) {
         checkWinner();
       } else if (z) {
         if (!y && x < z) {
-          dropzone.insertBefore(draggableElement, firstChild.nextElementSibling
+          dropzone.insertBefore(
+            draggableElement,
+            firstChild.nextElementSibling
           );
           event.dataTransfer.clearData();
         } else {
@@ -88,7 +88,9 @@ function onDrop(event) {
         }
       } else {
         if (!y && !z) {
-          dropzone.insertBefore(draggableElement, firstChild.nextElementSibling
+          dropzone.insertBefore(
+            draggableElement,
+            firstChild.nextElementSibling
           );
           event.dataTransfer.clearData();
         } else {
