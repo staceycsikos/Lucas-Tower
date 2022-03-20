@@ -18,21 +18,25 @@ function rulesAppear() {
 
 button.addEventListener("click", rulesAppear);
 
-if (towerA.children.length > 0) {
-  let children = towerA.children;
+function makeDraggable(tower) {
+  if (tower.children.length >= 0) {
+    let towerChildren = tower.children;
 
-  for (let i = 0; i < children.length; i++) {
-    if (i === 0) {
-      children[i].setAttribute("draggable", "true");
-    } else {
-      children[i].setAttribute("draggable", "false");
+    for (let i = 0; i < towerChildren.length; i++) {
+      if (i === 0) {
+        towerChildren[i].setAttribute("draggable", "true");
+      } else {
+        towerChildren[i].setAttribute("draggable", "false");
+      }
     }
   }
+  
 }
+
+makeDraggable(towerA)
 
 function onDragStart(event) {
   event.dataTransfer.setData("text/plain", event.target.id);
-  // console.log(towerA.children[0]);
 }
 
 function onDragOver(event) {
@@ -67,17 +71,16 @@ function onDrop(event) {
 
   if (dropzone.className === "place-holder") {
     if (firstChild) {
-      let x = parseInt(draggableElement.id);
-      let y = parseInt(firstChild.id);
-      let z = parseInt(firstChild?.nextElementSibling?.id) || false;
+      let beingDropped = parseInt(draggableElement.id);
+      let prevDropped = parseInt(firstChild.id);
+      let nextInA = parseInt(firstChild?.nextElementSibling?.id) || false;
 
-      console.log(`x: ${x}`, `y: ${y}`, `z: ${z}`);
-      if (x < y) {
+      if (beingDropped < prevDropped) {
         dropzone.insertBefore(draggableElement, firstChild);
         event.dataTransfer.clearData();
         checkWinner();
-      } else if (z) {
-        if (!y && x < z) {
+      } else if (nextInA) {
+        if (!prevDropped && (beingDropped < nextInA)) {   
           dropzone.insertBefore(
             draggableElement,
             firstChild.nextElementSibling
@@ -87,7 +90,7 @@ function onDrop(event) {
           event.dataTransfer.clearData();
         }
       } else {
-        if (!y && !z) {
+        if (!prevDropped && !nextInA) {
           dropzone.insertBefore(
             draggableElement,
             firstChild.nextElementSibling
@@ -102,39 +105,7 @@ function onDrop(event) {
       event.dataTransfer.clearData();
     }
   }
-
-  if (towerA.children.length >= 0) {
-    let towerAchildren = towerA.children;
-
-    for (let i = 0; i < towerAchildren.length; i++) {
-      if (i === 0) {
-        towerAchildren[i].setAttribute("draggable", "true");
-      } else {
-        towerAchildren[i].setAttribute("draggable", "false");
-      }
-    }
-  }
-
-  if (towerB.children.length >= 0) {
-    let towerBchildren = towerB.children;
-
-    for (let i = 0; i < towerBchildren.length; i++) {
-      if (i === 0) {
-        towerBchildren[i].setAttribute("draggable", "true");
-      } else {
-        towerBchildren[i].setAttribute("draggable", "false");
-      }
-    }
-  }
-  if (towerC.children.length >= 0) {
-    let towerCchildren = towerC.children;
-
-    for (let i = 0; i < towerCchildren.length; i++) {
-      if (i === 0) {
-        towerCchildren[i].setAttribute("draggable", "true");
-      } else {
-        towerCchildren[i].setAttribute("draggable", "false");
-      }
-    }
-  }
+  makeDraggable(towerA)
+  makeDraggable(towerB)
+  makeDraggable(towerC)
 }
